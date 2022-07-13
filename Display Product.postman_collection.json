@@ -1,0 +1,287 @@
+{
+	"info": {
+		"_postman_id": "292edbf8-a9e1-4a71-ab75-77981e3906c2",
+		"name": "Display Product",
+		"description": "Display Product\n\nContact Support:\n Email: userbisnis1@gmail.com",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21944200"
+	},
+	"item": [
+		{
+			"name": "inventory",
+			"item": [
+				{
+					"name": "searches inventory",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/inventory?searchString=sed in ea dolor&skip=76238388&limit=19",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"inventory"
+							],
+							"query": [
+								{
+									"key": "searchString",
+									"value": "sed in ea dolor",
+									"description": "pass an optional search string for looking up inventory"
+								},
+								{
+									"key": "skip",
+									"value": "76238388",
+									"description": "number of records to skip for pagination"
+								},
+								{
+									"key": "limit",
+									"value": "19",
+									"description": "maximum number of records to return"
+								}
+							]
+						},
+						"description": "By passing in the appropriate options, you can search for\navailable inventory in the system\n"
+					},
+					"response": [
+						{
+							"name": "search results matching criteria",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/inventory?searchString=sed in ea dolor&skip=76238388&limit=19",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"inventory"
+									],
+									"query": [
+										{
+											"key": "searchString",
+											"value": "sed in ea dolor"
+										},
+										{
+											"key": "skip",
+											"value": "76238388"
+										},
+										{
+											"key": "limit",
+											"value": "19"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"Logo\": \"urn:uuid:603a9368-9db7-99cd-2f5a-62ee6c31a7be\",\n    \"Speed\": \"be206938-c824-a36a-d2ad-cf4c4693b606\",\n    \"productname\": \"urn:uuid:5feede6c-5e78-ae6c-5d51-f8f0102a0415\",\n    \"description\": \"19c8920e-d18e-91cf-a366-dfc8a7a492e3\"\n  },\n  {\n    \"Logo\": \"urn:uuid:2f077128-8dfa-2a1d-6c44-6d3f248eaa12\",\n    \"Speed\": \"1bf733f0-6ddc-c122-6cd9-604e76f889fd\",\n    \"productname\": \"urn:uuid:72ea6658-b9c8-8f84-305e-c62fd18f07a0\",\n    \"description\": \"urn:uuid:6ba7eb0b-54b2-6058-9fc2-99108073d3a9\"\n  }\n]"
+						},
+						{
+							"name": "bad input parameter",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/inventory?searchString=sed in ea dolor&skip=76238388&limit=19",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"inventory"
+									],
+									"query": [
+										{
+											"key": "searchString",
+											"value": "sed in ea dolor"
+										},
+										{
+											"key": "skip",
+											"value": "76238388"
+										},
+										{
+											"key": "limit",
+											"value": "19"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "adds an inventory item",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"Logo\": \"urn:uuid:83261b10-62ed-f7c2-352d-dcde4a559ac6\",\n  \"Speed\": \"urn:uuid:637194f6-46ca-a782-27d8-9dcd6e4c4047\",\n  \"productname\": \"33734039-7272-7847-88a2-d5415ffa1d93\",\n  \"description\": \"urn:uuid:53dcfe01-1564-997f-87d7-a786d339fcf8\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/inventory",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"inventory"
+							]
+						},
+						"description": "Adds an item to the system"
+					},
+					"response": [
+						{
+							"name": "item created",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"Logo\": \"urn:uuid:83261b10-62ed-f7c2-352d-dcde4a559ac6\",\n  \"Speed\": \"urn:uuid:637194f6-46ca-a782-27d8-9dcd6e4c4047\",\n  \"productname\": \"33734039-7272-7847-88a2-d5415ffa1d93\",\n  \"description\": \"urn:uuid:53dcfe01-1564-997f-87d7-a786d339fcf8\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/inventory",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"inventory"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "invalid input, object invalid",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"Logo\": \"urn:uuid:83261b10-62ed-f7c2-352d-dcde4a559ac6\",\n  \"Speed\": \"urn:uuid:637194f6-46ca-a782-27d8-9dcd6e4c4047\",\n  \"productname\": \"33734039-7272-7847-88a2-d5415ffa1d93\",\n  \"description\": \"urn:uuid:53dcfe01-1564-997f-87d7-a786d339fcf8\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/inventory",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"inventory"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"name": "an existing item already exists",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"Logo\": \"urn:uuid:83261b10-62ed-f7c2-352d-dcde4a559ac6\",\n  \"Speed\": \"urn:uuid:637194f6-46ca-a782-27d8-9dcd6e4c4047\",\n  \"productname\": \"33734039-7272-7847-88a2-d5415ffa1d93\",\n  \"description\": \"urn:uuid:53dcfe01-1564-997f-87d7-a786d339fcf8\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/inventory",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"inventory"
+									]
+								}
+							},
+							"status": "Conflict",
+							"code": 409,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://virtserver.swaggerhub.com/RENNYMEI29/Listproduct/1.0.0",
+			"type": "string"
+		}
+	]
+}
